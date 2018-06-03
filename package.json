@@ -1,0 +1,45 @@
+{
+  "name": "runtimeconfig-spike-nodejs",
+  "version": "0.0.1",
+  "description": "Store data using Google Cloud Runtime Configuration API",
+  "license": "MIT",
+  "private": true,
+  "main": "build/src/index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "test": "jest --coverage --detectOpenHandles --forceExit --verbose",
+    "check": "gts check",
+    "clean": "gts clean",
+    "compile": "tsc -p .",
+    "fix": "gts fix",
+    "lint": "gts check",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run check"
+  },
+  "dependencies": {
+    "googleapis": "^31.0.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.3",
+    "@types/node": "^10.1.4",
+    "gts": "^0.6.0",
+    "jest": "^23.1.0",
+    "ts-jest": "^22.4.6",
+    "ts-node": "^6.0.5",
+    "typescript": "^2.8.4"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/test/**/*.test.ts"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
+  }
+}
