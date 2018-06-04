@@ -8,16 +8,14 @@ async function main() {
     ]
   });
   const projectId = await google.auth.getDefaultProjectId();
-  const storage = google.storage({
-    version: 'v1',
-    auth: client
-  });
-  const storage_object = await storage.objects.get({
+  const storage = google.storage({version: 'v1', auth: client});
+  const storageObjectResponse = await storage.objects.get({
     alt: 'media',
     bucket: `${projectId}-runtimeconfig-spike`,
     object: 'file.json'
   });
-  console.log(storage_object.data);
+  const storageObject = storageObjectResponse.data;
+  console.log(storageObject);
 }
 
 main().catch(console.error);
