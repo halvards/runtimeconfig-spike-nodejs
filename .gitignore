@@ -75,6 +75,7 @@ typings/
 *account*.json
 *credential*.json
 *key*.json
+*secret*.json
 
 # Build output
 build/
